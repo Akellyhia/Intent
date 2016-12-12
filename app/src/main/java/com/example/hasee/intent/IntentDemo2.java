@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
-public class IntentActivity2 extends AppCompatActivity {
+public class IntentDemo2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intent2);
+        setContentView(R.layout.activity_intent_demo2);
     }
     public void upper(View view){
         Intent intent = getIntent();

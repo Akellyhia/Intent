@@ -9,9 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.net.URL;
-
-public class IntentActivity1 extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private EditText phone,url;
     private TextView text;
@@ -19,19 +17,19 @@ public class IntentActivity1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intent1);
+        setContentView(R.layout.activity_main);
         phone = (EditText) findViewById(R.id.phone);
         url = (EditText) findViewById(R.id.url);
         text = (TextView) findViewById(R.id.textview1);
     }
     public void componentname(View view){
-        ComponentName componentName = new ComponentName(this, IntentActivity2.class);
+        ComponentName componentName = new ComponentName(this, IntentDemo2.class);
         Intent intent = new Intent();
         intent.setComponent(componentName);
         startActivity(intent);
     }
     public void intentfilter(View view){
-        String action = "com.gdmec07150650.kisme";
+        String action = "com.gdmec.07150609.kissme";
         Intent intent = new Intent();
         intent.setAction(action);
         startActivity(intent);
@@ -52,7 +50,7 @@ public class IntentActivity1 extends AppCompatActivity {
     public void startActivityforresult(View view){
         Bundle bundle = new Bundle();
         bundle.putString("value", url.getText().toString());
-        Intent intent = new Intent(IntentActivity1.this,IntentActivity2.class);
+        Intent intent = new Intent(MainActivity.this,IntentDemo2.class);
         intent.putExtras(bundle);
         startActivityForResult(intent, 10);
     }
